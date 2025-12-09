@@ -19,15 +19,15 @@ const noteSchema = new mongoose.Schema({
 
 const Note = mongoose.model('Note', noteSchema)
 
-// const note = new Note({
-//   content: 'HTML is easy',
-//   important: true,
-// })
+const note = new Note({
+   content: 'HTML is easy',
+   important: true,
+})
 
-// // note.save().then((result) => {
-// //   console.log('note saved!')
-// //   mongoose.connection.close()
-// // })
+note.save().then((result) => {
+  console.log('note saved!')
+  .connection.close()
+})
 
 Note.find({}).then((result) => {
   result.forEach((note) => {
@@ -35,3 +35,4 @@ Note.find({}).then((result) => {
   })
   mongoose.connection.close()
 })
+mongoose
